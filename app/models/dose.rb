@@ -3,5 +3,5 @@ class Dose < ApplicationRecord
   belongs_to :ingredient
 
   validates :description, presence: true
-  validates :description, uniqueness: true
+  validates :description, uniqueness: {scope: :ingredient }
 end
